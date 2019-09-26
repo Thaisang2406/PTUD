@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\PTUD\WpfApp2\WpfApp2\obj\Debug\
+C:\Users\Admin\Desktop\PTUD\WpfApp2\WpfApp2\obj\Debug\
 WpfApp2
 none
 false
 DEBUG;TRACE
-D:\PTUD\WpfApp2\WpfApp2\App.xaml
-4281152173
+C:\Users\Admin\Desktop\PTUD\WpfApp2\WpfApp2\App.xaml
+91808116233
 
-10-468920524
-15-458861252
-Login.xaml;MainWindow.xaml;Views\RentView.xaml;Views\ReserveView.xaml;
+15602500181
+15-1312907686
+Login.xaml;MainWindow.xaml;Views\ClerkView.xaml;Views\Customer.xaml;Views\Disk.xaml;Views\RentView.xaml;Views\ReportView.xaml;Views\ReturnView.xaml;Views\TitleView.xaml;
 
 True
 

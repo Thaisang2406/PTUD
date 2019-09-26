@@ -19,7 +19,17 @@
 
         <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
             <Grid>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10">
+                    <ListBox>
+                        <ListBoxItem x:Name="Logout" Selected="Logout_Selected" >
+                            Log Out
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="Exit" Selected="Exit_Selected">
+                            Exit
+                        </ListBoxItem>
+                        
+                    </ListBox>
+                </materialDesign:PopupBox>
             </Grid>
         </materialDesign:ColorZone>
         <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="{StaticResource PrimaryHueMidBrush}">
@@ -33,49 +43,50 @@
             </Grid>
             <Grid Grid.Row="1">
                 <StackPanel>
-                    <Button x:Name="Reservation" Margin="10"   VerticalAlignment="Top" Click="Reservation_Click">
-                        <Grid Width="200">
-                            <materialDesign:PackIcon Kind="Hololens" VerticalAlignment="Center"/>
-                            <TextBlock HorizontalAlignment="Center" Text="ĐẶT ĐĨA" FontFamily="Champagne &amp; Limousines"/>
-                        </Grid>
-                    </Button>
+                    
                     <Button x:Name="Rent" Margin="10" Click="Rent_Click"   >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="Responsive" VerticalAlignment="Center"/>
                             <TextBlock HorizontalAlignment="Center" Text="THUÊ ĐĨA" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-                    <Button x:Name="Return" Margin="10"   >
+                    <Button x:Name="Return" Margin="10" Click="Return_Click"   >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="AssignmentReturn" VerticalAlignment="Center"/>
                             <TextBlock HorizontalAlignment="Center" Text="TRẢ ĐĨA" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-                    <Button x:Name="Customer" Margin="10"  >
+                    <Button x:Name="Customer" Margin="10" Click="Customer_Click"  >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock HorizontalAlignment="Center" Text="QUẢN LÝ KHÁCH HÀNG" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-                    <Button x:Name="Title" Margin="10"  >
+                    <Button x:Name="Title" Margin="10" Click="Title_Click"  >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="Subtitles" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock HorizontalAlignment="Center" Text="QUẢN LÝ TỰA ĐỀ" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-                    <Button x:Name="Disk" Margin="10"  >
+                    <Button x:Name="Disk" Margin="10" Click="Disk_Click"  >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="Disc" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock HorizontalAlignment="Center" Text="QUẢN LÝ ĐĨA" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-                    <Button x:Name="Report" Margin="10"  >
+                    <Button x:Name="Employee" Margin="10" Click="Employee_Click"  >
+                        <Grid Width="200">
+                            <materialDesign:PackIcon Kind="AccountArrowRight" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock HorizontalAlignment="Center" Text="QUẢN LÝ NHÂN VIÊN" FontFamily="Champagne &amp; Limousines"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="Report" Margin="10" Click="Report_Click"  >
                         <Grid Width="200">
                             <materialDesign:PackIcon Kind="Report" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock HorizontalAlignment="Center" Text="BÁO CÁO" FontFamily="Champagne &amp; Limousines"/>
                         </Grid>
                     </Button>
-
+                   
                 </StackPanel>
             </Grid>
         </Grid>

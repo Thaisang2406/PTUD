@@ -41,7 +41,7 @@
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="30" Color="BlueViolet" ShadowDepth="0"/>
                 </Border.Effect>
-                <Button Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,65" Content="LOGIN"/>
+                <Button Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,65" Content="LOGIN" Click="Button_Click_1"/>
 
             </Border>
             <Border>

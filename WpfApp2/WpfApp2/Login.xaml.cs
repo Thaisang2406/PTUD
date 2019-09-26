@@ -30,5 +30,13 @@ namespace WpfApp2
         {
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            w.Show();
+            this.Close();
+        }
     }
 }

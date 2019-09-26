@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Admin\Desktop\PTUD\WpfApp2\WpfApp2\App.xaml
-4281152173
+91808116233
 
-9-1918418519
+14-846997814
 15-1312907686
-Login.xaml;MainWindow.xaml;Views\RentView.xaml;Views\ReserveView.xaml;
+Login.xaml;MainWindow.xaml;Views\ClerkView.xaml;Views\Customer.xaml;Views\Disk.xaml;Views\RentView.xaml;Views\ReportView.xaml;Views\ReturnView.xaml;Views\TitleView.xaml;
 
 False
 
