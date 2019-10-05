@@ -75,5 +75,7 @@ namespace WpfApp2
         {
             DataContext = new ReportView();
         }
+
+        //test
     }
 }
