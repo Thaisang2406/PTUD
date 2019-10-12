@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp2.ViewModel
 {
-   public class ReserveViewModel
+    class TaiKhoan
     {
-
     }
 }

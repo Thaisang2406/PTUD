@@ -137,6 +137,7 @@ namespace WpfApp2
         private void Btn_Customer_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Customer();
+
         }
 
         private void Btn_Clerk_Click(object sender, RoutedEventArgs e)

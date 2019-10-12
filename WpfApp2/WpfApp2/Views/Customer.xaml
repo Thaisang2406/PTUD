@@ -86,11 +86,15 @@
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0"
+                                    x:Name="btnSave"
                                     Margin="2 20 2 2"
-                                    Content="Xác nhận"></Button>
+                                    Content="Xác nhận"
+                                    Click="BtnSave_Click"></Button>
                             <Button Grid.Column="1"
+                                    x:Name="btnCancel"
                                     Margin="2 20 2 2"
-                                    Content="Hủy"></Button>
+                                    Content="Hủy"
+                                    Click="BtnCancel_Click"></Button>
                         </Grid>
 
                     </StackPanel>
@@ -145,10 +149,10 @@
                     <ColumnDefinition Width="115*"/>
                     <ColumnDefinition Width="63*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid x:Name="grvResever" 
+                <DataGrid x:Name="grvCustomer" 
                       Background="AliceBlue"
                       BorderBrush="Black"
-                      
+                      SelectionChanged="GrvCustomer_SelectionChanged"
                       BorderThickness="1"
                       Margin="0,0,-0.4,0"
                       IsReadOnly="True"
@@ -157,30 +161,37 @@
                       AutoGenerateColumns="False"
                       materialDesign:DataGridAssist.CellPadding="13 8 8 8"
                       materialDesign:DataGridAssist.ColumnHeaderPadding="8"
-                     ItemsSource="{Binding Resevers}" Grid.ColumnSpan="2"
+                     ItemsSource="{Binding KhachHangs}" Grid.ColumnSpan="2"
                       >
                     <DataGrid.Columns>
 
                         <materialDesign:MaterialDataGridTextColumn
-                      Binding="{Binding Id}"
-                      Header="ID" />
+                      Binding="{Binding maKhachHang}"
+                      Header="ID" 
+                            />
                         <materialDesign:MaterialDataGridTextColumn
                             Width="100"
-                      Binding="{Binding Titlename}"
+                      Binding="{Binding hoTen}"
                       Header="Họ Tên"/>
                         <materialDesign:MaterialDataGridTextColumn
-                      Binding="{Binding Type}"
+                      Binding="{Binding soDienThoai}"
                       Header="Số Điện Thoại"/>
                         <materialDesign:MaterialDataGridTextColumn
                        Width="100"
-                      Binding="{Binding CountCustomer}"
+                      Binding="{Binding soCMND}"
+                      Header="Số CMND"/>
+                        <materialDesign:MaterialDataGridTextColumn
+                       Width="100"
+                      Binding="{Binding diaChi}"
                       Header="Địa chỉ"/>
                         <DataGridTemplateColumn Header="Cập nhật">
                             <DataGridTemplateColumn.CellTemplate >
                                 <DataTemplate>
                                     <Button x:Name="btnUpdate"
                                             Width="35"
-                                            CommandParameter="{Binding Id}" 
+                                            CommandParameter="{Binding maKhachHang}"
+                                            
+                                            Click="BtnUpdate_Click"
                                            >
                                         <materialDesign:PackIcon Kind="Update" 
                                                                     Margin="-12,-9,-5,-80" Width="25" Height="17" >
@@ -196,6 +207,7 @@
                                         Width="35" 
                                         Background="Red"
                                         x:Name="btnDelete"
+                                        Click="BtnDelete_Click"
                                         >
                                         <materialDesign:PackIcon Kind="Trash"  Margin="-12,-9,-5,-80" Width="25" Height="17">
                                         </materialDesign:PackIcon>

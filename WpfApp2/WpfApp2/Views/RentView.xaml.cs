@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp2.Model;
 
 namespace WpfApp2.Views
 {
@@ -20,9 +21,23 @@ namespace WpfApp2.Views
     /// </summary>
     public partial class RentView : UserControl
     {
+        //DiaBdDataContext db = new DiaBdDataContext();
+        List<KhachHang> KhachHangs = new List<KhachHang>();
+        public List<KhachHang> ListCus { get; set; }
+        public List<PhiTre> ListPhiTre { get; set; }
+
+        QLDiaEntities _db = new QLDiaEntities();
+
         public RentView()
         {
+            InitialCustomer();
             InitializeComponent();
         }
+
+        void InitialCustomer()
+        {
+            ListCus = _db.KhachHang.Where(x => x.maKhachHang != 0).ToList();
+        }
+
     }
 }
