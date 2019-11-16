@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-      Title="Drop Down Menu" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
+      Title="PHẦN MỀM QUẢN LÝ CHO THUÊ ĐĨA" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

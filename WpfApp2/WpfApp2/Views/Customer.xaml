@@ -104,6 +104,7 @@
                             x:Name="btnAddCustomer"
                             Content="Thêm khách hàng"
                             Background="Green"
+                        IsEnabled="True"
                             Margin="34,70,36,50" Click="BtnAddCustomer_Click" />
 
 
@@ -128,20 +129,11 @@
                         materialDesign:HintAssist.Hint="Tìm kiếm"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         x:Name="txtSearch"
+                       TextChanged="TxtSearch_TextChanged"
                         materialDesign:TransitionAssist.DisableTransitions="True" Grid.Column="0"  />
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Button x:Name="btnSearch"
-                         Margin="10,10,0,0"
-                        Grid.Column="1"
-                        Width="35"
-                        VerticalAlignment="Top"
-                            HorizontalAlignment="Left"
-                        >
 
-                        <materialDesign:PackIcon Margin="-12,-9,-5,-80" Kind="Search" Width="25" Height="17" >
-                        </materialDesign:PackIcon>
-                    </Button>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">
@@ -220,7 +212,8 @@
                                 <DataTemplate>
                                     <Button 
                                         Width="35" 
-                                        x:Name="btnShowLateBill" 
+                                        x:Name="btnShowLateBill"
+                                        Click="BtnShowLateBill_Click"
                                         >
                                         <materialDesign:PackIcon Kind="Eye"  Margin="-12,-9,-5,-80" Width="25" Height="17">
                                         </materialDesign:PackIcon>
@@ -233,6 +226,75 @@
 
                 </DataGrid>
             </Grid>
+        </Grid>
+        <Grid Margin="50,100,200,600" Background="Aqua" >
+            <Popup Name="popupLateBill" 
+                   IsOpen="False"
+                   Margin="0,0,0,0">
+                <StackPanel 
+                    Background="PaleGreen"
+                    Width="800"
+                    Height="500" 
+                    Orientation="Vertical">
+                    <Button x:Name="btnExit" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Red" Click="BtnExit_Click" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <materialDesign:PackIcon Kind="Close" Width="25" Height="30"/>
+                    </Button>
+                    <TextBlock
+                   Background="PaleGreen"
+                    FontSize="25"
+                    x:Name="txtLateBill" 
+                    Foreground="Blue"
+                   HorizontalAlignment="Center"
+                    Text="Thông tin phí trễ"
+                    VerticalAlignment="Center"/>
+                    <StackPanel Height="350">
+                        <DataGrid  
+                    Background="PaleGreen"
+                    BorderBrush="Red"
+                    BorderThickness="1"
+                    Margin="20,20,20,0"
+                    AutoGenerateColumns="False"
+                    x:Name="dgvLateBill"
+                    ItemsSource="{Binding ListPhiTres}">
+                            <DataGrid.Columns>
+                                <materialDesign:MaterialDataGridTextColumn
+                                    IsReadOnly="True"
+                      Binding="{Binding tenTuaDe}"
+                      Header="Tựa đề"/>
+                                <materialDesign:MaterialDataGridTextColumn
+                                    IsReadOnly="True"
+                      Binding="{Binding hanTra}"
+                      Header="Hạn trả"/>
+                                <materialDesign:MaterialDataGridTextColumn
+                                    IsReadOnly="True"
+                      Binding="{Binding ngayTra}"
+                      Header="Ngày Trả"/>
+                                <materialDesign:MaterialDataGridTextColumn
+                                    IsReadOnly="True"
+                      Binding="{Binding ngayTre}"
+                      Header="Ngày trể"/>
+
+                                <materialDesign:MaterialDataGridTextColumn
+                                    IsReadOnly="True"
+                      Binding="{Binding phiTre}"
+                      Header="Tổng tiền"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        
+                        <Button
+                Width="150"
+                            x:Name="btnThanhToan"
+                            VerticalAlignment="Bottom"
+                            Margin="50,20,50,20"
+                            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                            Foreground="Black"
+                            IsEnabled="False"
+                            Click="BtnThanhToan_Click"
+                            ToolTip="Thanh Toán Phí Trễ" Content="Thanh Toán" RenderTransformOrigin="0.52,-0.294"/>
+                    </StackPanel>
+                </StackPanel>
+            </Popup>
         </Grid>
     </Grid>
 </UserControl>
